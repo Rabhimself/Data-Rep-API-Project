@@ -61,14 +61,41 @@ The XML document is around 3300 lines long, with the header providing payload pu
 Each measurement is indexed, and each measurement has multiple values associated with it. For example; Wind measurements include the maximum wind speed recorded, direction bearing, compass direction, and speed.
 
 ###Querying the Dataset
-Individual station measurements can be requested by station ID's, and are requested from
-> www.irelandweathernow.ie/station/NRA####
+Individual station measurements can be requested by station ID's, and are requested from:
+> www.irelandweathernow.ie/station/
+
+```
+   {
+      "id":"NRA1681",
+      "temp":{ "air":16, 
+               "dewPoint": 6.5
+            },
+      "precip":"rain",
+      "wind":{ "maximumWindSpeed":2.3,
+               "bearing":306,
+               "compass":"northWest",
+               "speed":0.1
+            },
+      "road":{
+               "protectionTemp":0,
+               "roadSurfaceTemp":19.9
+            }
+   }
+```
+
+A response containing measurements from all stations is requested from:
+> www.irelandweathernow.ie/station/all
+
+GPS coordinates can be used to find the closest weather station.
+> www.irelandweathernow.ie/station/find?loc:[latitude]+[Longitude]
+
+
+
 
 ###Parameters
 
 More specific requests can be made regarding station measurements by using parameters.
 
-####cat
  - wind
  - precip
  - temp
