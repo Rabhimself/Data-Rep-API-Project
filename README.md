@@ -64,5 +64,16 @@ Each measurement is indexed, and each measurement has multiple values associated
 Individual station measurements can be requested by station ID's, and are requested from
 > www.irelandweathernow.ie/station/NRA####
 
+###Parameters
+
 More specific requests can be made regarding station measurements by using parameters.
+
+####cat
+ - wind
+ - precip
+ - temp
+ - road
+
+
+For example:
   - www.irelandweathernow.ie/station/NRA2284?cat=wind
