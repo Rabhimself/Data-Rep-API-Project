@@ -57,7 +57,7 @@ The XML document is around 3300 lines long, with the header providing payload pu
 
 ```
 
-Each measurement type is indexed, and each measurement has multiple values associated with it. For example; Wind measurements include the maximum wind speed recorded, direction bearing, compass direction, and speed.
+Each measurement type is indexed, and each measurement has multiple values associated with it. For example; wind measurements include the maximum wind speed recorded, direction bearing, compass direction, and speed.
 
 ###Querying the API
 
@@ -89,7 +89,7 @@ A response containing measurements from all stations is requested from:
 
 The API will return an array of stations, each with their own last recorded measurements, in JSON format. This will allow a developer to easily import and use the collection using a standard JSON parse.
 
-An truncated example of a response is:
+A truncated example of a response is:
 ```
 [
    {
@@ -127,7 +127,7 @@ An truncated example of a response is:
 ]
 ```
 
-####GPS coordinates can be used to find the closest weather station using the following URL:
+GPS coordinates can be used to find the closest weather station using the following URL:
 > www.irelandweathernow.ie/station/find?loc:[latitude]+[Longitude]
 
 This will return a single station object in the same format had a specific station been requested. The GPS lookup will be done by the backend.
@@ -157,7 +157,6 @@ Here's an example of the object array returned:
 ###Parameters
 
 More specific requests can be made regarding individual station measurements by using parameters.
-
  - wind
  - precip
  - temp
@@ -170,3 +169,5 @@ For example:
       Returns station NRA2284's last wind measurements.
   - www.irelandweathernow.ie/station/loc:53.277628+-9.009711?m=temp&road
       Returns the temperature and road conditions for the station nearest the coords: 53.277628,-9.009711.
+
+
