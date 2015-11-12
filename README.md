@@ -11,7 +11,7 @@ found at [Data.Gov.Ie](https://data.gov.ie/dataset/national-roads-weather-statio
 The Dataset is provided as an XML document, and is updated every five minutes using data from 80+ weather stations across Ireland. 
 These stations provide weather information in relation to road safety, information such as: air temperature, precipitation, wind speed & direction and Road Surface temperature.
 
-The XML document is around 3300 lines long, with the header providing payload publication information, and each weather station's measurements listed as individual nodes. It is important to note that these nodes are nested alongside the header and publication information. A typical node looks like this:
+The XML document is around 3300 lines long, with the header providing payload publication information, and each weather station's measurements listed as individual nodes. It is important to note that these nodes are nested alongside the header and publication information. A typical node in the dataset looks like this:
 
 ```
 <siteMeasurements>
@@ -56,6 +56,20 @@ The XML document is around 3300 lines long, with the header providing payload pu
   </siteMeasurements>
 
 ```
+Each station node's fields can be broken down to the following relevant fields.
+|Field|Description|
+-------------------
+| measurementSiteReference | The station's identifier |
+| measuredValue | Index for each measurement category |
+| airTemperature | Ambient air temperature recorded |
+| dewPointTemperature | The temperature at which dew will form  |
+| precipitationType | Type of precipitation recorded |
+| maximumWindSpeed
+| windDirectionBearing
+| windDirectionCompass
+| windSpeed
+| protectionTemperature
+| roadSurfaceTemperature
 
 Each measurement type is indexed, and each measurement has multiple values associated with it. For example; wind measurements include the maximum wind speed recorded, direction bearing, compass direction, and speed.
 
