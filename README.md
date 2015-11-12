@@ -57,19 +57,19 @@ The XML document is around 3300 lines long, with the header providing payload pu
 
 ```
 Each station node's fields can be broken down to the following relevant fields.
-|Field|Description|
--------------------
+
+| Field     | Description |
+--------------------------|------------------------------
 | measurementSiteReference | The station's identifier |
 | measuredValue | Index for each measurement category |
 | airTemperature | Ambient air temperature recorded |
 | dewPointTemperature | The temperature at which dew will form  |
 | precipitationType | Type of precipitation recorded |
-| maximumWindSpeed
-| windDirectionBearing
-| windDirectionCompass
-| windSpeed
-| protectionTemperature
-| roadSurfaceTemperature
+| maximumWindSpeed | Highest wind speed recorded for that period |
+| windDirectionBearing | Wind direction bearing |
+| windDirectionCompass | Compass based wind direction |
+| windSpeed | Average wind speed |
+| roadSurfaceTemperature | Road surface temperature |
 
 Each measurement type is indexed, and each measurement has multiple values associated with it. For example; wind measurements include the maximum wind speed recorded, direction bearing, compass direction, and speed.
 
@@ -176,12 +176,15 @@ More specific requests can be made regarding individual station measurements by 
  - temp
  - road
  
-Note: These parameters will only work with URLs that return individual station objects.
 
 For example:
   - www.irelandweathernow.ie/station/NRA2284?m=wind
+ 
       Returns station NRA2284's last wind measurements.
+
+
   - www.irelandweathernow.ie/station/loc:53.277628+-9.009711?m=temp&road
+  
       Returns the temperature and road conditions for the station nearest the coords: 53.277628,-9.009711.
 
 
